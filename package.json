@@ -1,0 +1,26 @@
+{
+  "name": "local-notes",
+  "version": "1.0.0",
+  "description": "A notes app that stores information to localstorage.",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/APJohns/local-notes.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/APJohns/local-notes/issues"
+  },
+  "homepage": "https://github.com/APJohns/local-notes#readme",
+  "devDependencies": {
+    "autoprefixer": "^9.3.1",
+    "browser-sync": "^2.26.3",
+    "gulp": "^3.9.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-sass": "^4.0.2"
+  }
+}
