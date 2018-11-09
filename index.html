@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Solar System</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+  
+  
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  <section id="settings">
+  <label for="scale">Scale
+    <input type="range" id="scale" min="0.2" max="10" step="0.2"></label>
+  
+  <label for="speed">Speed
+    <input type="range" id="speed" min="0.1" max="5.0" step="0.2" value="1"></label>
+  
+  <label for="lines"><input type="checkbox" id="lines" checked>
+    Orbit Lines</label>
+</section>
+
+<section id="info">
+  <div id="description">
+    <h2 id="p-title">Earth</h2>
+    <ul>
+      <li><strong>Mass</strong> <span id="p-mass"></span> kg</li>
+      <li><strong>Distance from Sun</strong> <span id="p-distance"></span> million mi</li>
+      <li><strong>Orbital Period</strong> <span id="p-period"></span> earth days</li>
+    </ul>
+  </div>
+  <div id="infobtns">
+    <input type="radio" id="rmer" value="0" name="planets">
+    <label for="rmer">Mercury</label>
+
+    <input type="radio" id="rven" value="1" name="planets">
+    <label for="rven">Venus</label>
+
+    <input type="radio" id="rear" value="2" name="planets">
+    <label for="rear">Earth</label>
+
+    <input type="radio" id="rmar" value="3" name="planets">
+    <label for="rmar">Mars</label>
+
+    <input type="radio" id="rjup" value="4" name="planets">
+    <label for="rjup">Jupiter</label>
+
+    <input type="radio" id="rsat" value="5" name="planets">
+    <label for="rsat">Saturn</label>
+
+    <input type="radio" id="rura" value="6" name="planets">
+    <label for="rura">Uranus</label>
+
+    <input type="radio" id="rnep" value="7" name="planets">
+    <label for="rnep">Neptune</label>
+  </div>
+</section>
+
+<main id="solar-system">
+  
+  <div id="sun"></div>
+  <div id="mercury" class="orbit"><span id="mer" class="planet"></span></div>
+  <div id="venus" class="orbit"><span id="ven" class="planet"></span></div>
+  <div id="earth" class="orbit"><span id="ear" class="planet"></span></div>
+  <div id="mars" class="orbit"><span id="mar" class="planet"></span></div>
+  <div id="jupiter" class="orbit"><span id="jup" class="planet"></span></div>
+  <div id="saturn" class="orbit"><span id="sat" class="planet"><span id="satBody"></span></span></div>
+  <div id="uranus" class="orbit"><span id="ura" class="planet"></span></div>
+  <div id="neptune" class="orbit"><span id="nep" class="planet"></span></div>  
+  
+</main>
+  
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,269 @@
+html, body {
+  background-color: #0a0a0a;
+  background-image: url("https://i.imgur.com/CSby7A4.png");
+  font-family: Roboto, sans-serif;
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+main {
+  position: relative;
+  margin: 50vh 50vw;
+}
+
+.orbit, #sun {
+  border-radius: 50%;
+  position: absolute;
+  transition: 0.5s all ease;
+}
+.orbit:not(#sun), #sun:not(#sun) {
+  border: 1px solid rgba(106, 174, 201, 0.5);
+}
+
+.planet {
+  content: '';
+  display: block;
+  border-radius: 50%;
+  position: relative;
+  margin: auto;
+  transition: 0.5s all ease;
+}
+.planet:hover {
+  background-color: white;
+}
+
+#sun {
+  width: 10px;
+  height: 10px;
+  background-color: yellow;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  transition: 0.5s all ease;
+}
+
+#mercury {
+  width: 7.6px;
+  height: 7.6px;
+  -webkit-animation: 0.8s infinite linear orbit;
+          animation: 0.8s infinite linear orbit;
+}
+
+#mer {
+  width: 0.8px;
+  height: 0.8px;
+  top: -0.4px;
+  background-color: orange;
+}
+
+#venus {
+  width: 14.4px;
+  height: 14.4px;
+  -webkit-animation: 2.4s infinite linear orbit;
+          animation: 2.4s infinite linear orbit;
+}
+
+#ven {
+  width: 1.8px;
+  height: 1.8px;
+  top: -0.9px;
+  background-color: tan;
+}
+
+#earth {
+  width: 20px;
+  height: 20px;
+  -webkit-animation: 4s infinite linear orbit;
+          animation: 4s infinite linear orbit;
+}
+
+#ear {
+  width: 2px;
+  height: 2px;
+  top: -1px;
+  background-color: dodgerblue;
+}
+
+#mars {
+  width: 30.4px;
+  height: 30.4px;
+  -webkit-animation: 7.6s infinite linear orbit;
+          animation: 7.6s infinite linear orbit;
+}
+
+#mar {
+  width: 1px;
+  height: 1px;
+  top: -0.5px;
+  background-color: red;
+}
+
+#jupiter {
+  width: 104px;
+  height: 104px;
+  -webkit-animation: 47.6s infinite linear orbit;
+          animation: 47.6s infinite linear orbit;
+}
+
+#jup {
+  width: 22.4px;
+  height: 22.4px;
+  top: -11.2px;
+  background-color: peru;
+}
+
+#saturn {
+  width: 191.6px;
+  height: 191.6px;
+  -webkit-animation: 118s infinite linear orbit;
+          animation: 118s infinite linear orbit;
+}
+
+#sat {
+  width: 19px;
+  height: 19px;
+  top: -9.5px;
+  background-color: BurlyWood;
+  border: 3px solid rgba(226, 223, 204, 0.5);
+  background: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#satBody {
+  background-color: BurlyWood;
+  display: block;
+  width: 75%;
+  height: 75%;
+  border-radius: 50%;
+}
+
+/*#rings {
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  padding: 3px;
+  border: 3px solid rgba(226, 223, 204, 0.5);
+  display: inline-block;
+  content: '';
+  border-radius: 50%;
+  width: inherit;
+  height: inherit;
+}*/
+#uranus {
+  width: 384px;
+  height: 384px;
+  -webkit-animation: 336s infinite linear orbit;
+          animation: 336s infinite linear orbit;
+}
+
+#ura {
+  width: 8px;
+  height: 8px;
+  top: -4px;
+  background-color: royalblue;
+}
+
+#neptune {
+  width: 602px;
+  height: 602px;
+  -webkit-animation: 659.2s infinite linear orbit;
+          animation: 659.2s infinite linear orbit;
+}
+
+#nep {
+  width: 7.8px;
+  height: 7.8px;
+  top: -3.9px;
+  background-color: deepskyblue;
+}
+
+#settings {
+  position: fixed;
+  top: 20px;
+  left: 10px;
+  color: #eee;
+  z-index: 2;
+}
+#settings input[type='range'] {
+  display: block;
+  direction: rtl;
+}
+#settings label {
+  display: block;
+  margin-bottom: 20px;
+}
+
+#info {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  color: #eee;
+  z-index: 2;
+}
+
+#description {
+  text-align: center;
+  background-color: rgba(106, 174, 201, 0.4);
+  opacity: 0;
+  padding: 10px 20px;
+}
+#description h2, #description p, #description ul {
+  margin: 0;
+}
+#description ul {
+  display: flex;
+  list-style-type: none;
+  padding: 15px 0;
+}
+#description li {
+  flex: 1;
+}
+#description li strong {
+  color: #aaa;
+  display: block;
+}
+
+#infobtns {
+  display: flex;
+}
+#infobtns label {
+  text-align: center;
+  padding: 10px;
+  flex: 1;
+  background-color: rgba(51, 52, 56, 0.4);
+}
+#infobtns label:hover {
+  background-color: rgba(51, 52, 56, 0.9);
+}
+#infobtns input {
+  display: none;
+}
+#infobtns input[type="radio"]:checked + label {
+  background-color: rgba(106, 174, 201, 0.4);
+}
+
+@-webkit-keyframes orbit {
+  from {
+    -webkit-transform: translate(-50%, -50%) rotate(0deg);
+            transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    -webkit-transform: translate(-50%, -50%) rotate(360deg);
+            transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes orbit {
+  from {
+    -webkit-transform: translate(-50%, -50%) rotate(0deg);
+            transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    -webkit-transform: translate(-50%, -50%) rotate(360deg);
+            transform: translate(-50%, -50%) rotate(360deg);
+  }
+}

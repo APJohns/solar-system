@@ -1,0 +1,215 @@
+$mercuryR: 4px;
+$mercuryCol: orange;
+
+$venusR: 9px;
+$venusCol: tan;
+
+$earthR: 10px;
+$earthCol: dodgerblue;
+
+$marsR: 5px;
+$marsCol: red;
+
+$jupiterR: 112px;
+$jupiterCol: peru;
+
+$saturnR: 95px;
+$saturnCol: BurlyWood;
+
+$uranusR: 40px;
+$uranusCol: royalblue;
+
+$neptuneR: 39px;
+$neptuneCol: deepskyblue;
+
+@mixin planet($size, $col) {
+  width: $size / 5;
+  height: $size / 5;
+  top: -(($size / 5) / 2);
+  background-color: $col;
+}
+
+@mixin orbit($v, $r) {
+  width: $r / 5;
+  height: $r / 5;
+  animation: ($v * 4) infinite linear orbit;
+}
+
+html, body {
+  background-color: #0a0a0a;
+  background-image: url("https://i.imgur.com/CSby7A4.png");
+  font-family: Roboto, sans-serif;
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+main {
+  position: relative;
+  margin: 50vh 50vw;
+}
+
+.orbit {
+  border-radius: 50%;
+  position: absolute;
+  transition: 0.5s all ease;
+  &:not(#sun) {
+    border: 1px solid rgba(106, 174, 201, 0.5);
+  }
+}
+
+.planet {
+  content: '';
+  display: block;
+  border-radius: 50%;
+  position: relative;
+  margin: auto;
+  transition: 0.5s all ease;
+  
+  &:hover {
+    background-color: white;
+  }
+}
+
+#sun {
+  @extend .orbit;
+  width: 10px;
+  height: 10px;
+  background-color: yellow;
+  transform: translate(-50%, -50%);
+  transition: 0.5s all ease;
+}
+
+#mercury { @include orbit(0.2s, 38px); }
+#mer { @include planet($mercuryR, $mercuryCol); }
+
+#venus { @include orbit(0.6s, 72px); }
+#ven { @include planet($venusR, $venusCol); }
+
+#earth { @include orbit(1s, 100px); }
+#ear { @include planet($earthR, $earthCol); }
+
+#mars { @include orbit(1.9s, 152px); }
+#mar { @include planet($marsR, $marsCol); }
+
+#jupiter { @include orbit(11.9s, 520px); }
+#jup { @include planet($jupiterR, $jupiterCol); }
+
+#saturn { @include orbit(29.5s, 958px); }
+#sat { 
+  @include planet($saturnR, $saturnCol);
+  border: 3px solid rgba(226, 223, 204, 0.5);
+  background: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#satBody {
+  background-color: $saturnCol;
+  display: block;
+  width: 75%;
+  height: 75%;
+  border-radius: 50%;
+}
+/*#rings {
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  padding: 3px;
+  border: 3px solid rgba(226, 223, 204, 0.5);
+  display: inline-block;
+  content: '';
+  border-radius: 50%;
+  width: inherit;
+  height: inherit;
+}*/
+
+#uranus { @include orbit(84s, 1920px); }
+#ura { @include planet($uranusR, $uranusCol); }
+
+#neptune { @include orbit(164.8s, 3010px); }
+#nep { @include planet($neptuneR, $neptuneCol); }
+
+#settings {
+  position: fixed;
+  top: 20px;
+  left: 10px;
+  color: #eee; 
+  z-index: 2;
+  
+  input[type='range'] {
+    display: block;
+    direction: rtl;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+#info {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  color: #eee;
+  z-index: 2;
+}
+
+#description {
+  text-align: center;
+  background-color: rgba(106, 174, 201, 0.4);
+  opacity: 0;
+  padding: 10px 20px;
+  
+  h2, p, ul {margin: 0;}
+  
+  ul {
+    display: flex;
+    list-style-type: none;
+    padding: 15px 0;
+  }
+  
+  li {
+    flex: 1;
+    
+    strong {
+      color: #aaa;
+      display: block;
+    }
+  }
+}
+
+#infobtns {
+  display: flex;
+  
+  label {
+    text-align: center;
+    padding: 10px;
+    flex: 1;
+    background-color: rgba(51, 52, 56, 0.4);
+    
+    &:hover {
+      background-color: rgba(51, 52, 56, 0.9);
+    }
+  }
+   
+  input {
+    display: none;
+  }
+  
+  input[type="radio"]:checked + label {
+    background-color: rgba(106, 174, 201, 0.4);
+  }
+}
+
+@keyframes orbit {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
