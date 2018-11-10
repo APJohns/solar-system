@@ -1,11 +1,20 @@
 html, body {
   background-color: #0a0a0a;
-  background-image: url("https://i.imgur.com/CSby7A4.png");
+  background-image: url("../media/stars.png");
   font-family: Roboto, sans-serif;
   margin: 0;
   height: 100vh;
   width: 100vw;
   overflow: hidden; }
+
+#haze {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  content: '';
+  background: radial-gradient(circle, rgba(40, 95, 177, 0.16) 25%, rgba(0, 0, 0, 0)); }
 
 main {
   position: relative;
@@ -32,13 +41,15 @@ main {
   width: 10px;
   height: 10px;
   background-color: yellow;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   transition: 0.5s all ease; }
 
 #mercury {
   width: 7.6px;
   height: 7.6px;
-  animation: 0.8s infinite linear orbit; }
+  -webkit-animation: 0.8s infinite linear orbit;
+          animation: 0.8s infinite linear orbit; }
 
 #mer {
   width: 0.8px;
@@ -49,7 +60,8 @@ main {
 #venus {
   width: 14.4px;
   height: 14.4px;
-  animation: 2.4s infinite linear orbit; }
+  -webkit-animation: 2.4s infinite linear orbit;
+          animation: 2.4s infinite linear orbit; }
 
 #ven {
   width: 1.8px;
@@ -60,7 +72,8 @@ main {
 #earth {
   width: 20px;
   height: 20px;
-  animation: 4s infinite linear orbit; }
+  -webkit-animation: 4s infinite linear orbit;
+          animation: 4s infinite linear orbit; }
 
 #ear {
   width: 2px;
@@ -71,7 +84,8 @@ main {
 #mars {
   width: 30.4px;
   height: 30.4px;
-  animation: 7.6s infinite linear orbit; }
+  -webkit-animation: 7.6s infinite linear orbit;
+          animation: 7.6s infinite linear orbit; }
 
 #mar {
   width: 1px;
@@ -82,7 +96,8 @@ main {
 #jupiter {
   width: 104px;
   height: 104px;
-  animation: 47.6s infinite linear orbit; }
+  -webkit-animation: 47.6s infinite linear orbit;
+          animation: 47.6s infinite linear orbit; }
 
 #jup {
   width: 22.4px;
@@ -93,7 +108,8 @@ main {
 #saturn {
   width: 191.6px;
   height: 191.6px;
-  animation: 118s infinite linear orbit; }
+  -webkit-animation: 118s infinite linear orbit;
+          animation: 118s infinite linear orbit; }
 
 #sat {
   width: 19px;
@@ -128,7 +144,8 @@ main {
 #uranus {
   width: 384px;
   height: 384px;
-  animation: 336s infinite linear orbit; }
+  -webkit-animation: 336s infinite linear orbit;
+          animation: 336s infinite linear orbit; }
 
 #ura {
   width: 8px;
@@ -139,7 +156,8 @@ main {
 #neptune {
   width: 602px;
   height: 602px;
-  animation: 659.2s infinite linear orbit; }
+  -webkit-animation: 659.2s infinite linear orbit;
+          animation: 659.2s infinite linear orbit; }
 
 #nep {
   width: 7.8px;
@@ -199,44 +217,18 @@ main {
   #infobtns input[type="radio"]:checked + label {
     background-color: rgba(106, 174, 201, 0.4); }
 
-@keyframes orbit {
-  from {
-    transform: translate(-50%, -50%) rotate(0deg); }
-  to {
-    transform: translate(-50%, -50%) rotate(360deg); } }
-
-  padding: 10px;
-  flex: 1;
-  background-color: rgba(51, 52, 56, 0.4);
-}
-#infobtns label:hover {
-  background-color: rgba(51, 52, 56, 0.9);
-}
-#infobtns input {
-  display: none;
-}
-#infobtns input[type="radio"]:checked + label {
-  background-color: rgba(106, 174, 201, 0.4);
-}
-
 @-webkit-keyframes orbit {
   from {
     -webkit-transform: translate(-50%, -50%) rotate(0deg);
-            transform: translate(-50%, -50%) rotate(0deg);
-  }
+            transform: translate(-50%, -50%) rotate(0deg); }
   to {
     -webkit-transform: translate(-50%, -50%) rotate(360deg);
-            transform: translate(-50%, -50%) rotate(360deg);
-  }
-}
+            transform: translate(-50%, -50%) rotate(360deg); } }
 
 @keyframes orbit {
   from {
     -webkit-transform: translate(-50%, -50%) rotate(0deg);
-            transform: translate(-50%, -50%) rotate(0deg);
-  }
+            transform: translate(-50%, -50%) rotate(0deg); }
   to {
     -webkit-transform: translate(-50%, -50%) rotate(360deg);
-            transform: translate(-50%, -50%) rotate(360deg);
-  }
-}
+            transform: translate(-50%, -50%) rotate(360deg); } }
